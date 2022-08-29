@@ -1,0 +1,66 @@
+unit uFrmConsulta;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmPai, Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TFrmConsulta = class(TFrmPai)
+    GroupBoxConsulta: TGroupBox;
+    edt_Chave: TEdit;
+    btn_Sair: TButton;
+    btn_Excluir: TButton;
+    btn_Alterar: TButton;
+    btn_Incluir: TButton;
+    Filtro: TLabel;
+    ListView: TListView;
+    btn_Filtrar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ConhecaObj( pObj, pCtrl : TObject );  override;
+    procedure Pesquisar;
+    procedure Alterar;
+    procedure Excluir;
+    procedure Sair;
+  end;
+
+var
+  FrmConsulta: TFrmConsulta;
+
+implementation
+
+{$R *.dfm}
+
+{ TFrmConsulta }
+
+procedure TFrmConsulta.Alterar;
+begin
+
+end;
+
+procedure TFrmConsulta.ConhecaObj(pObj, pCtrl: TObject);
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsulta.Excluir;
+begin
+
+end;
+
+procedure TFrmConsulta.Pesquisar;
+begin
+
+end;
+
+procedure TFrmConsulta.Sair;
+begin
+  CloseModal;
+end;
+
+end.

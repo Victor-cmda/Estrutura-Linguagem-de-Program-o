@@ -1,0 +1,18 @@
+program ProjectPaisesEstadosCidades;
+
+uses
+  Vcl.Forms,
+  uFrmMenu in 'uFrmMenu.pas' {Menu},
+  uFrmPai in 'uFrmPai.pas' {FrmPai},
+  uFrmConsulta in 'uFrmConsulta.pas' {FrmConsulta};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TMenu, Menu);
+  Application.CreateForm(TFrmPai, FrmPai);
+  Application.CreateForm(TFrmConsulta, FrmConsulta);
+  Application.Run;
+end.

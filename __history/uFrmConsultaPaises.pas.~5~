@@ -1,0 +1,70 @@
+unit uFrmConsultaPaises;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmConsulta, Vcl.ComCtrls,
+  Vcl.StdCtrls, uPaises;
+
+type
+  TFrmConsultaPaises = class(TFrmConsulta)
+  private
+    { Private declarations }
+    oPais: Paises;
+  public
+    { Public declarations }
+    procedure ConhecaObj(pObj, pCtrl: TObject); override;
+    procedure Pesquisar; override;
+    procedure Incluir; override;
+    procedure Alterar; override;
+    procedure Excluir; override;
+    procedure Sair; override;
+  end;
+
+var
+  FrmConsultaPaises: TFrmConsultaPaises;
+
+implementation
+
+{$R *.dfm}
+{ TFrmConsultaPaises }
+
+procedure TFrmConsultaPaises.Alterar;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaPaises.ConhecaObj(pObj, pCtrl: TObject);
+begin
+  inherited;
+  oPais := Paises(pObj);
+end;
+
+procedure TFrmConsultaPaises.Excluir;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaPaises.Incluir;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaPaises.Pesquisar;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaPaises.Sair;
+begin
+  inherited;
+
+end;
+
+end.

@@ -1,0 +1,30 @@
+unit uFrmMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    Pases1: TMenuItem;
+    Estados1: TMenuItem;
+    Cidades1: TMenuItem;
+    Sair1: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Menu: TMenu;
+
+implementation
+
+{$R *.dfm}
+
+end.

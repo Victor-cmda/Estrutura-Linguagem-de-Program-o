@@ -1,0 +1,36 @@
+object Menu: TMenu
+  Left = 0
+  Top = 0
+  Caption = 'Menu'
+  ClientHeight = 322
+  ClientWidth = 642
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 264
+    Top = 96
+    object Cadastros1: TMenuItem
+      Caption = '&Cadastros'
+      object Pases1: TMenuItem
+        Caption = '&Pa'#237'ses'
+      end
+      object Estados1: TMenuItem
+        Caption = '&Estados'
+      end
+      object Cidades1: TMenuItem
+        Caption = '&Cidades'
+      end
+    end
+    object Sair1: TMenuItem
+      Caption = 'Sair'
+    end
+  end
+end

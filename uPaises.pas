@@ -1,0 +1,97 @@
+unit uPaises;
+
+interface
+
+uses uPai, system.DateUtils;
+
+
+type
+  Paises = class(PAI)
+  private
+  protected
+    pais: string;
+    ddi: string;
+    Sigla: string;
+  public
+    constructor CrieObj;
+    constructor CrieInit(pCodigo, pCodUser: integer;
+      pPais, pDDI, pSigla: string; pDatCad, pDatUltAlt: TDateTime);
+    destructor Destrua_se;
+    procedure setPais(pPais: string);
+    procedure setDDI(pDDI: string);
+    procedure setSigla(pSigla: string);
+    function getPais: string;
+    function getDDI: string;
+    function getSigla: string;
+    function Clone: Paises;
+  end;
+
+implementation
+
+{ Paises }
+
+function Paises.Clone: Paises;
+begin
+  result := Paises.CrieInit(codigo, coduser, pais, ddi, Sigla, datcad,
+    datultalt);
+end;
+
+constructor Paises.CrieInit(pCodigo, pCodUser: integer;
+  pPais, pDDI, pSigla: string; pDatCad, pDatUltAlt: TDateTime);
+begin
+  codigo := pCodigo;
+  coduser := pCodUser;
+  pais := pPais;
+  ddi := pDDI;
+  Sigla := pSigla;
+  datcad := pDatCad;
+  datultalt := pDatUltAlt;
+end;
+
+constructor Paises.CrieObj;
+begin
+  codigo := 0;
+  coduser := 0;
+  pais := '';
+  ddi := '';
+  Sigla := '';
+  datcad := Today;
+  datultalt := Today;
+end;
+
+destructor Paises.Destrua_se;
+begin
+
+end;
+
+function Paises.getDDI: string;
+begin
+  result := ddi;
+end;
+
+function Paises.getPais: string;
+begin
+  result := pais;
+end;
+
+function Paises.getSigla: string;
+begin
+  result := Sigla
+end;
+
+procedure Paises.setDDI(pDDI: string);
+begin
+  ddi := pDDI;
+end;
+
+procedure Paises.setPais(pPais: string);
+begin
+  pais := pPais;
+end;
+
+procedure Paises.setSigla(pSigla: string);
+begin
+  Sigla := pSigla;
+end;
+
+end.

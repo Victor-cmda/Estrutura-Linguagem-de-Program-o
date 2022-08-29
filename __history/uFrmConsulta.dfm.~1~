@@ -1,0 +1,13 @@
+inherited FrmConsulta: TFrmConsulta
+  Caption = 'Consulta'
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 637
+    Height = 396
+    Caption = 'GroupBox1'
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,41 @@
+unit uFrmMenu;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uInterfaces, uPaises;
+
+type
+  TMenu = class(TForm)
+    MainMenu1: TMainMenu;
+    Cadastros: TMenuItem;
+    Paises: TMenuItem;
+    Estados: TMenuItem;
+    Cidades: TMenuItem;
+    Lancamentos: TMenuItem;
+    Utilitarios: TMenuItem;
+    Sair: TMenuItem;
+    procedure SairClick(Sender: TObject);
+  private
+    { Private declarations }
+  protected
+    aInter : Interfaces;
+    oPais : Paises;
+  public
+    { Public declarations }
+  end;
+
+var
+  Menu: TMenu;
+
+implementation
+
+{$R *.dfm}
+
+procedure TMenu.SairClick(Sender: TObject);
+begin
+  close;
+end;
+
+end.

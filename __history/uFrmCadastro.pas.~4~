@@ -1,0 +1,74 @@
+unit uFrmCadastro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmPai, Vcl.StdCtrls;
+
+type
+  TCadastro = class(TFrmPai)
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    txtCod: TEdit;
+    btn_Sair: TButton;
+    btn_Salvar: TButton;
+    Label2: TLabel;
+    dtCadastro: TEdit;
+    Label3: TLabel;
+    txtDtUltAlt: TEdit;
+    Label4: TLabel;
+    txtCodUsuarioUltAlt: TEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ConhecaObj (pObj,pCtrl: TObject); override;
+    procedure LimpaEdit;                        virtual;
+    procedure CarregaEdit;                      virtual;
+    procedure BloqueiaEdit;                     virtual;
+    procedure DesbloqueiaEdit;                  virtual;
+    procedure Salvar;                           virtual;
+  end;
+
+var
+  Cadastro: TCadastro;
+
+implementation
+
+{$R *.dfm}
+
+{ TCadastro }
+
+procedure TCadastro.BloqueiaEdit;
+begin
+
+end;
+
+procedure TCadastro.CarregaEdit;
+begin
+
+end;
+
+procedure TCadastro.ConhecaObj(pObj, pCtrl: TObject);
+begin
+  inherited;
+
+end;
+
+procedure TCadastro.DesbloqueiaEdit;
+begin
+
+end;
+
+procedure TCadastro.LimpaEdit;
+begin
+
+end;
+
+procedure TCadastro.Salvar;
+begin
+
+end;
+
+end.

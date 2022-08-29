@@ -1,0 +1,68 @@
+unit uFrmConsultaCidades;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmConsulta, Vcl.ComCtrls, Vcl.StdCtrls;
+
+type
+  TFrmConsultaCidades = class(TFrmConsulta)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ConhecaObj( pObj, pCtrl : TObject );  override;
+    procedure Pesquisar;                            override;
+    procedure Incluir;                              override;
+    procedure Alterar;                              override;
+    procedure Excluir;                              override;
+    procedure Sair;                                 override;
+  end;
+
+var
+  FrmConsultaCidades: TFrmConsultaCidades;
+
+implementation
+
+{$R *.dfm}
+
+{ TFrmConsultaCidades }
+
+procedure TFrmConsultaCidades.Alterar;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaCidades.ConhecaObj(pObj, pCtrl: TObject);
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaCidades.Excluir;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaCidades.Incluir;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaCidades.Pesquisar;
+begin
+  inherited;
+
+end;
+
+procedure TFrmConsultaCidades.Sair;
+begin
+  inherited;
+
+end;
+
+end.
