@@ -1,0 +1,87 @@
+unit uCidades;
+
+interface
+
+uses uPai, uEstados, system.DateUtils;
+
+type
+  Cidades = class(pai)
+  private
+  protected
+    Cidade: string;
+    IBGE: string;
+    Estado: Estados;
+  public
+    constructor CrieObj;
+    constructor CrieInit(pCodigo: integer; pCidade, pIBGE: string;
+      Estado: Estados; pDatCad, pDatUltAlt: TDateTime);
+    destructor Destrua_se;
+    procedure setCidade(pCidade: string);
+    procedure setIBGE(pIBGE: string);
+    procedure setOEstado(pEstado: Estados);
+    function getCidade: string;
+    function getIBGE: string;
+    function getOEstado: Estados;
+    function clone: Cidades;
+  end;
+
+implementation
+
+{ Cidades }
+
+function Cidades.clone: Cidades;
+begin
+
+end;
+
+constructor Cidades.CrieInit(pCodigo: integer; pCidade, pIBGE: string;
+  Estado: Estados; pDatCad, pDatUltAlt: TDateTime);
+begin
+
+end;
+
+constructor Cidades.CrieObj;
+begin
+  inherited;
+  codigo := 0;
+  Cidade := '';
+  IBGE := '';
+  Estado := Estados.CrieObj;
+end;
+
+destructor Cidades.Destrua_se;
+begin
+
+end;
+
+function Cidades.getCidade: string;
+begin
+
+end;
+
+function Cidades.getIBGE: string;
+begin
+
+end;
+
+function Cidades.getOEstado: Estados;
+begin
+
+end;
+
+procedure Cidades.setCidade(pCidade: string);
+begin
+
+end;
+
+procedure Cidades.setIBGE(pIBGE: string);
+begin
+
+end;
+
+procedure Cidades.setOEstado(pEstado: Estados);
+begin
+
+end;
+
+end.

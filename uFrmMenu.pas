@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uInterfaces, uPaises;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, uInterfaces, uPaises,
+  uCidades,
+  uEstados;
 
 type
   TMenu = class(TForm)
@@ -27,9 +29,12 @@ type
   protected
     aInter: Interfaces;
     oPais: Paises;
+    oEstado: Estados;
+    aCidade: Cidades;
   public
     { Public declarations }
-    procedure ConhecaObj(pPais: Paises; pInter: Interfaces);
+    procedure ConhecaObj(pPais: Paises; pInter: Interfaces; pEstado: Estados;
+      pCidade: Cidades);
   end;
 
 var
@@ -41,18 +46,23 @@ implementation
 
 procedure TMenu.CidadesClick(Sender: TObject);
 begin
-  aInter.PDCidades(nil,nil);
+  aInter.PDCidades(aCidade, nil);
 end;
 
-procedure TMenu.ConhecaObj(pPais: Paises; pInter: Interfaces);
+procedure TMenu.ConhecaObj(pPais: Paises; pInter: Interfaces; pEstado: Estados;
+  pCidade: Cidades);
 begin
   aInter := pInter;
   oPais := pPais;
+  oEstado := pEstado;
+  aCidade := pCidade;
+  oEstado.setOPais(oPais);
+  aCidade.setOEstado(oEstado);
 end;
 
 procedure TMenu.EstadosClick(Sender: TObject);
 begin
-  aInter.PDEstados(nil,nil)
+  aInter.PDEstados(oEstado, nil)
 end;
 
 procedure TMenu.FormCreate(Sender: TObject);
@@ -62,7 +72,7 @@ end;
 
 procedure TMenu.PaisesClick(Sender: TObject);
 begin
-  aInter.PDPaises(oPais,nil);
+  aInter.PDPaises(oPais, nil);
 end;
 
 procedure TMenu.SairClick(Sender: TObject);

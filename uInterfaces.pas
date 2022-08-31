@@ -40,6 +40,9 @@ begin
   aConsultaPaises.setCadastro(oCadastroPaises);
   aConsultaEstado.setCadastro(oCadastroEstados);
   aConsultaCidades.setCadastro(oCadastroCidades);
+
+  oCadastroEstados.setConsultaPaises(aConsultaPaises);
+  oCadastroCidades.setConsultaEstados(aConsultaEstado);
 end;
 
 destructor Interfaces.Destrua_se;

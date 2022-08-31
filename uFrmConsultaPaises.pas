@@ -38,6 +38,7 @@ procedure TFrmConsultaPaises.Alterar;
 begin
   inherited;
   oCadastroPaises.ConhecaObj(oPais, nil);
+  oCadastroPaises.CarregaEdit;
   oCadastroPaises.ShowModal;
 end;
 
@@ -57,13 +58,17 @@ procedure TFrmConsultaPaises.Excluir;
 begin
   inherited;
   oCadastroPaises.ConhecaObj(oPais, nil);
+  oCadastroPaises.CarregaEdit;
+  oCadastroPaises.BloqueiaEdit;
   oCadastroPaises.ShowModal;
+  oCadastroPaises.DesbloqueiaEdit;
 end;
 
 procedure TFrmConsultaPaises.Incluir;
 begin
   inherited;
   oCadastroPaises.ConhecaObj(oPais, nil);
+  oCadastroPaises.LimpaEdit;
   oCadastroPaises.ShowModal;
 end;
 

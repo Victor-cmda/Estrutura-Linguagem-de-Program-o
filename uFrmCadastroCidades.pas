@@ -3,21 +3,36 @@ unit uFrmCadastroCidades;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmCadastro, Vcl.StdCtrls;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmCadastro, Vcl.StdCtrls,
+  uFrmConsultaEstados, uCidades;
 
 type
   TFrmCadastroCidades = class(TFrmCadastro)
+    edt_Cidade: TEdit;
+    edt_IBGE: TEdit;
+    edt_codEstado: TEdit;
+    edt_Estado: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    btn_Pesquisar: TButton;
+    procedure btn_PesquisarClick(Sender: TObject);
   private
     { Private declarations }
+    oFrmConsultaEstados: TFrmConsultaEstados;
+    aCidade: Cidades;
   public
     { Public declarations }
-    procedure ConhecaObj (pObj,pCtrl: TObject); override;
-    procedure LimpaEdit;                        override;
-    procedure CarregaEdit;                      override;
-    procedure BloqueiaEdit;                     override;
-    procedure DesbloqueiaEdit;                  override;
-    procedure Salvar;                           override;
+    procedure ConhecaObj(pObj, pCtrl: TObject); override;
+    procedure LimpaEdit; override;
+    procedure CarregaEdit; override;
+    procedure BloqueiaEdit; override;
+    procedure DesbloqueiaEdit; override;
+    procedure Salvar; override;
+    procedure setConsultaEstados(pObj: TObject);
   end;
 
 var
@@ -26,13 +41,24 @@ var
 implementation
 
 {$R *.dfm}
-
 { TFrmCadastroCidades }
 
 procedure TFrmCadastroCidades.BloqueiaEdit;
 begin
   inherited;
 
+end;
+
+procedure TFrmCadastroCidades.btn_PesquisarClick(Sender: TObject);
+var
+  aux: string;
+begin
+  inherited;
+  oFrmConsultaEstados.ConhecaObj(aCidade.getOEstado, nil);
+  aux := oFrmConsultaEstados.btn_Sair.Caption;
+  oFrmConsultaEstados.btn_Sair.Caption := 'Selecionar';
+  oFrmConsultaEstados.ShowModal;
+  oFrmConsultaEstados.btn_Sair.Caption := aux;
 end;
 
 procedure TFrmCadastroCidades.CarregaEdit;
@@ -44,7 +70,7 @@ end;
 procedure TFrmCadastroCidades.ConhecaObj(pObj, pCtrl: TObject);
 begin
   inherited;
-
+  aCidade := Cidades(pObj);
 end;
 
 procedure TFrmCadastroCidades.DesbloqueiaEdit;
@@ -62,6 +88,12 @@ end;
 procedure TFrmCadastroCidades.Salvar;
 begin
   inherited;
+
+end;
+
+procedure TFrmCadastroCidades.setConsultaEstados(pObj: TObject);
+begin
+  oFrmConsultaEstados := TFrmConsultaEstados(pObj);
 
 end;
 

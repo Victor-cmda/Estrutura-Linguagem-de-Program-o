@@ -1,0 +1,43 @@
+unit uAplicacao;
+
+interface
+  uses uFrmMenu, uInterfaces, uPaises, uEstados;
+  type Aplicacao = class
+    private
+    protected
+      oMenu : TMenu;
+      aInter : Interfaces;
+      oPais : Paises;
+      oEstado : Estados;
+    public
+      constructor CrieObj;
+      destructor Destrua_se;
+      procedure Execute_se;
+  end;
+implementation
+
+{ Aplicacao }
+
+constructor Aplicacao.CrieObj;
+begin
+  oMenu := TMenu.Create(nil);
+  aInter := Interfaces.CrieObj;
+  oPais := Paises.CrieObj;
+  oEstado := Estados.CrieObj;
+end;
+
+destructor Aplicacao.Destrua_se;
+begin
+  oMenu.FreeInstance;
+  aInter.Destrua_se;
+  oPais.Destrua_se;
+  oEstado.Destura_se;
+end;
+
+procedure Aplicacao.Execute_se;
+begin
+  oMenu.ConhecaObj(oPais, aInter);
+  oMenu.ShowModal;
+end;
+
+end.

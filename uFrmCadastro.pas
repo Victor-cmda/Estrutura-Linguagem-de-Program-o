@@ -20,6 +20,7 @@ type
     Label4: TLabel;
     txtCodUsuarioUltAlt: TEdit;
     procedure btn_SairClick(Sender: TObject);
+    procedure btn_SalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +51,12 @@ procedure TFrmCadastro.btn_SairClick(Sender: TObject);
 begin
   inherited;
   close;
+end;
+
+procedure TFrmCadastro.btn_SalvarClick(Sender: TObject);
+begin
+  inherited;
+  Salvar;
 end;
 
 procedure TFrmCadastro.CarregaEdit;

@@ -21,7 +21,7 @@ inherited FrmCadastro: TFrmCadastro
     object Label2: TLabel
       Left = 24
       Top = 336
-      Width = 122
+      Width = 85
       Height = 13
       Caption = 'Data de Cadastro'
     end
@@ -64,6 +64,7 @@ inherited FrmCadastro: TFrmCadastro
       Height = 25
       Caption = '&Salvar'
       TabOrder = 2
+      OnClick = btn_SalvarClick
     end
     object dtCadastro: TEdit
       Left = 24

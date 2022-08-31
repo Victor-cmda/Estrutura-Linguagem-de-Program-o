@@ -98,49 +98,36 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uFrmMenu.pas">
-            <Form>Menu</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="uFrmPai.pas">
             <Form>FrmPai</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmConsulta.pas">
             <Form>FrmConsulta</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmCadastro.pas">
             <Form>FrmCadastro</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmConsultaPaises.pas">
             <Form>FrmConsultaPaises</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmConsultaEstados.pas">
             <Form>FrmConsultaEstados</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmConsultaCidades.pas">
             <Form>FrmConsultaCidades</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmCadastroPaises.pas">
             <Form>FrmCadastroPaises</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmCadastroEstados.pas">
             <Form>FrmCadastroEstados</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uFrmCadastroCidades.pas">
             <Form>FrmCadastroCidades</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uPai.pas"/>
-        <DCCReference Include="uPaises.pas"/>
-        <DCCReference Include="uInterfaces.pas"/>
+        <DCCReference Include="uAplicacao.pas"/>
+        <DCCReference Include="uEstados.pas"/>
+        <DCCReference Include="uCidades.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
